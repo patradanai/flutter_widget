@@ -4,7 +4,7 @@ class CardImageStack extends StatelessWidget {
   CardImageStack({this.topic, this.subTopic, this.image});
   final String topic;
   final String subTopic;
-  final Image image;
+  final String image;
 
   Container textCentent() {
     return Container(
@@ -69,7 +69,11 @@ class CardImageStack extends StatelessWidget {
         vertical: 5,
       ),
       alignment: Alignment.topLeft,
-      child: image,
+      child: Image.asset(
+        image,
+        width: 120,
+        height: 120,
+      ),
     );
   }
 
@@ -77,8 +81,8 @@ class CardImageStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        top: 16.0,
-        bottom: 16.0,
+        top: 5.0,
+        bottom: 5.0,
         left: 24.0,
         right: 24.0,
       ),

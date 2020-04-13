@@ -1,10 +1,17 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:epos/widgets/roundButton.dart';
 
 class CardImage extends StatelessWidget {
+  CardImage({this.topic, this.subTopic, this.price});
+  final String topic;
+  final String subTopic;
+  final String price;
   Container boxContent() {
     return Container(
       height: 124,
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.rectangle,
@@ -27,17 +34,41 @@ class CardImage extends StatelessWidget {
       child: Container(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("Pad Thai",
-                    style:
-                        TextStyle(fontSize: 25, fontWeight: FontWeight.w800)),
+                Text(
+                  topic,
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
                 SizedBox(height: 5),
-                Text("Testy food in Thailand"),
+                Text(subTopic),
               ],
             ),
+            SizedBox(
+              width: 20,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                RoundButton(
+                  icon: Icons.add,
+                  color: Colors.amberAccent,
+                ),
+                Text(
+                  "£"+price,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
