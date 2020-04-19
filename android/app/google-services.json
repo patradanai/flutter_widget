@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "485290548571",
+    "firebase_url": "https://epos-a2b6c.firebaseio.com",
+    "project_id": "epos-a2b6c",
+    "storage_bucket": "epos-a2b6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485290548571:android:4516b9fb4b5d04cb66ce7e",
+        "android_client_info": {
+          "package_name": "com.example.epos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485290548571-1sdf530tpfe6d7adbie6h04id5bjdvr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOEdGwxucG7mfnG06gT3g3yrW3xgZ5xNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485290548571-1sdf530tpfe6d7adbie6h04id5bjdvr3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

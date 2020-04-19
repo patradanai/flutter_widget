@@ -1,13 +1,14 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:epos/widgets/roundButton.dart';
 
 class CardImage extends StatelessWidget {
-  CardImage({this.topic, this.subTopic, this.price});
-  final String topic;
-  final String subTopic;
+  CardImage({this.name, this.price, this.description, this.urlImage});
+
+  final String name;
   final String price;
+  final String description;
+  final String urlImage;
+
   Container boxContent() {
     return Container(
       height: 124,
@@ -40,33 +41,33 @@ class CardImage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  topic,
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w800,
-                  ),
+                  name,
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
                 ),
                 SizedBox(height: 5),
-                Text(subTopic),
+                Container(
+                  constraints: BoxConstraints(maxWidth: 150),
+                  child: Text(
+                    description,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 3,
+                    style: TextStyle(
+                        color: Colors.blueAccent, fontWeight: FontWeight.bold),
+                  ),
+                ),
               ],
-            ),
-            SizedBox(
-              width: 20,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 RoundButton(
                   icon: Icons.add,
-                  color: Colors.amberAccent,
+                  color: Colors.amber,
                 ),
                 Text(
-                  "£"+price,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
+                  "£ " + price,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                )
               ],
             )
           ],
@@ -75,10 +76,13 @@ class CardImage extends StatelessWidget {
     );
   }
 
+  // child: Image.asset(
+  //   'assets/images/dish2.jpg',
+
   Container boxImage() {
     return Container(
-      child: Image.asset(
-        'assets/images/dish2.jpg',
+      child: Image.network(
+        urlImage,
         height: 124,
         width: 124,
         fit: BoxFit.fitHeight,
@@ -89,7 +93,7 @@ class CardImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 8, bottom: 8),
+      margin: EdgeInsets.only(top: 2, bottom: 2),
       child: Row(
         children: <Widget>[
           boxImage(),

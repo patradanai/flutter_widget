@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:epos/widgets/cardWidget.dart';
-import 'package:epos/widgets/cardImageStackWidget.dart';
-import 'package:epos/widgets/cardImageWidget.dart';
 import 'package:epos/screens/category.dart';
+import 'package:epos/screens/menulist.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,8 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData.light().copyWith(),
+      theme: ThemeData.light().copyWith(primaryColor: Colors.blueAccent),
       home: MainScreen(),
+      // initialRoute: '/category',
+      routes: {
+        '/category': (context) => MainScreen(),
+        '/listmenu': (context) => MenuList()
+      },
     );
   }
 }
