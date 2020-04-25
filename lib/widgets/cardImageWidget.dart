@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:epos/widgets/roundButton.dart';
 
 class CardImage extends StatelessWidget {
-  CardImage({this.name, this.price, this.description, this.urlImage});
+  CardImage({this.name, this.price, this.description, this.urlImage,this.cart});
 
   final String name;
   final String price;
   final String description;
   final String urlImage;
+  final Widget cart;
 
   Container boxContent() {
     return Container(
@@ -63,6 +64,7 @@ class CardImage extends StatelessWidget {
                 RoundButton(
                   icon: Icons.add,
                   color: Colors.amber,
+                  funcCart: cart,
                 ),
                 Text(
                   "£ " + price,

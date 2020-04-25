@@ -5,6 +5,7 @@ import 'package:epos/widgets/cardImageWidget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:epos/models/menulistModel.dart';
+import 'package:epos/widgets/buttomsheet.dart';
 
 class MenuList extends StatefulWidget {
   @override
@@ -92,11 +93,15 @@ class _MenuListState extends State<MenuList> {
             return ListView.builder(
               itemBuilder: (context, index) {
                 return CardImage(
-                  name: snapshot.data[index].name,
-                  price: snapshot.data[index].price,
-                  description: snapshot.data[index].description,
-                  urlImage: snapshot.data[index].src,
-                );
+                    name: snapshot.data[index].name,
+                    price: snapshot.data[index].price,
+                    description: snapshot.data[index].description,
+                    urlImage: snapshot.data[index].src,
+                    cart: BuildButtonSheet(
+                      title: snapshot.data[index].name,
+                      description: snapshot.data[index].description,
+                      price: snapshot.data[index].price,
+                    ));
               },
               itemCount: snapshot.data.length,
             );
