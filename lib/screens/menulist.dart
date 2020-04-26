@@ -5,7 +5,7 @@ import 'package:epos/widgets/cardImageWidget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:epos/models/menulistModel.dart';
-import 'package:epos/widgets/buttomsheet.dart';
+import 'package:epos/screens/buttomsheet.dart';
 
 class MenuList extends StatefulWidget {
   @override
@@ -109,7 +109,9 @@ class _MenuListState extends State<MenuList> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/checkout');
+        },
         child: Icon(Icons.shopping_basket),
         backgroundColor: Colors.amber,
       ),

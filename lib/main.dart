@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:epos/screens/category.dart';
 import 'package:epos/screens/menulist.dart';
+import 'package:epos/screens/checkout.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       // initialRoute: '/category',
       routes: {
         '/category': (context) => MainScreen(),
-        '/listmenu': (context) => MenuList()
+        '/listmenu': (context) => MenuList(),
+        '/checkout': (context) => CheckOut()
       },
     );
   }
